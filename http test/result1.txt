@@ -1,0 +1,1034 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/blogs/style/menubar.css?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03" /><!--[if lt IE 9]><script src="https://t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script><![endif]--><!--[if gte IE 9]>
+<!--><script src="https://t1.daumcdn.net/tistory_admin/lib/jquery/jquery-3.2.1.min.js"></script><!--<![endif]-->
+<script>var tjQuery = jQuery.noConflict(true);</script><style type="text/css">.tt_article_useless_p_margin p {padding-top:0 !important;padding-bottom:0 !important;margin-top:0 !important;margin-bottom:0 !important;}</style><meta name="referrer" content="always"><link rel="shortcut icon" href="//t1.daumcdn.net/tistory_admin/static/top/favicon_0630.ico" /><meta name="description" content="기본 HTTP 요청하기 import httplib conn = httplib.HTTPConnection(&quot;httpbin.org&quot;) conn.request(&quot;GET&quot;, &quot;/ip&quot;) r1 = conn.getresponse() print r1.status, r1.reason data1 = r1.read() print data1 conn.request(&quot;GET&quot;, &quot;/get&quot;) r2 = conn.getresponse() print r2.status, r2.reason data2 = r2.read() print data2 conn.close() https 접속을 하려면, httplib.HTTPConnection 대신에 httplib.HTTPSConnection을 사용한다. &gt;..">
+
+<!-- BEGIN OPENGRAPH -->
+<link rel="canonical" href="http://devnauts.tistory.com/112" /><meta property="og:type" content="article"><meta property="og:url" content="http://devnauts.tistory.com/112" ><meta property="og:site_name" content="devnauts" ><meta property="og:title" content="[Python] HTTP 요청하기 (httplib 모듈 사용)" ><meta name="by" content="devnauts" ><meta property="og:description" content="기본 HTTP 요청하기 import httplib conn = httplib.HTTPConnection(&quot;httpbin.org&quot;) conn.request(&quot;GET&quot;, &quot;/ip&quot;) r1 = conn.getresponse() print r1.status, r1.reason data1 = r1.read() print data1 conn.request(&quot;GET&quot;, &quot;/get&quot;) r2 = conn.getresponse() print r2.status, r2.reason data2 = r2.read() print data2 conn.close() https 접속을 하려면, httplib.HTTPConnection 대신에 httplib.HTTPSConnection을 사용한다. &gt;.." ><meta property="og:image" content="https://t1.daumcdn.net/cssjs/icon/557567EA016E200001" >
+<!-- END OPENGRAPH -->
+
+
+
+<!-- BEGIN TWITTERCARD -->
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@TISTORY"><meta name="twitter:title" content="[Python] HTTP 요청하기 (httplib 모듈 사용)" ><meta name="twitter:description" content="기본 HTTP 요청하기 import httplib conn = httplib.HTTPConnection(&quot;httpbin.org&quot;) conn.request(&quot;GET&quot;, &quot;/ip&quot;) r1 = conn.getresponse() print r1.status, r1.reason data1 = r1.read() print data1 conn.request(&quot;GET&quot;, &quot;/get&quot;) r2 = conn.getresponse() print r2.status, r2.reason data2 = r2.read() print data2 conn.close() https 접속을 하려면, httplib.HTTPConnection 대신에 httplib.HTTPSConnection을 사용한다. &gt;.." ><meta property="twitter:image" content="https://t1.daumcdn.net/cssjs/icon/557567EA016E200001" >
+<!-- END TWITTERCARD -->
+
+
+
+<!-- BEGIN DAUMAPP -->
+<meta property="dg:plink" content="http://devnauts.tistory.com/112" ><meta name="plink" content="http://devnauts.tistory.com/112" ><meta name="title" content="[Python] HTTP 요청하기 (httplib 모듈 사용)" ><meta name="article:media_name" content="devnauts" ><meta property="article:mobile_url" content="http://devnauts.tistory.com/m/112" ><meta property="article:pc_url" content="http://devnauts.tistory.com/112" ><meta property="article:mobile_view_url" content="http://devnauts.tistory.com/m/112" ><meta property="article:pc_view_url" content="http://devnauts.tistory.com/112" ><meta property="article:talk_channel_view_url" content="http://devnauts.tistory.com/m/112" ><meta property="article:pc_service_home" content="http://www.tistory.com" ><meta property="article:mobile_service_home" content="http://www.tistory.com/m" ><meta property="article:txid" content="1563248_112" /><meta property="article:published_time" content="2016-12-13T03:05:33+09:00" ><meta property="og:regDate" content="20161213030533" ><meta property="article:modified_time" content="2016-12-29T05:36:45+09:00" >
+<!-- END DAUMAPP -->
+
+
+
+<!-- BEGIN STRUCTURED_DATA -->
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"http:\/\/devnauts.tistory.com\/112"},"url":"http:\/\/devnauts.tistory.com\/112","headline":"[Python] HTTP \uc694\uccad\ud558\uae30 (httplib \ubaa8\ub4c8 \uc0ac\uc6a9)","description":"\uae30\ubcf8 HTTP \uc694\uccad\ud558\uae30 import httplib conn = httplib.HTTPConnection(\"httpbin.org\") conn.request(\"GET\", \"\/ip\") r1 = conn.getresponse() print r1.status, r1.reason data1 = r1.read() print data1 conn.request(\"GET\", \"\/get\") r2 = conn.getresponse() print r2.status, r2.reason data2 = r2.read() print data2 conn.close() https \uc811\uc18d\uc744 \ud558\ub824\uba74, httplib.HTTPConnection \ub300\uc2e0\uc5d0 httplib.HTTPSConnection\uc744 \uc0ac\uc6a9\ud55c\ub2e4. >..","author":{"@type":"Person","name":"devnauts"},"image":{"@type":"ImageObject","url":"https:\/\/t1.daumcdn.net\/cssjs\/icon\/557567EA016E200001","width":"800px","height":"800px"},"datePublished":"20161213T03:05:33+09:00","dateModified":"20161229T05:36:45+09:00","publisher":{"@type":"Organization","name":"TISTORY","logo":{"@type":"ImageObject","url":"https:\/\/t1.daumcdn.net\/cssjs\/icon\/557567EA016E200001","width":"800px","height":"800px"}}}</script>
+<!-- END STRUCTURED_DATA -->
+
+<link rel="apple-touch-icon" href="//i1.daumcdn.net/thumb/C180x180/?fname=http%3A%2F%2Fcfile5.uf.tistory.com%2Fimage%2F241F093D5701E7380371B5">
+<link rel="apple-touch-icon" sizes="76x76" href="//i1.daumcdn.net/thumb/C76x76/?fname=http%3A%2F%2Fcfile5.uf.tistory.com%2Fimage%2F241F093D5701E7380371B5">
+<link rel="apple-touch-icon" sizes="120x120" href="//i1.daumcdn.net/thumb/C120x120/?fname=http%3A%2F%2Fcfile5.uf.tistory.com%2Fimage%2F241F093D5701E7380371B5">
+<link rel="apple-touch-icon" sizes="152x152" href="//i1.daumcdn.net/thumb/C152x152/?fname=http%3A%2F%2Fcfile5.uf.tistory.com%2Fimage%2F241F093D5701E7380371B5">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="alternate" type="application/rss+xml" title="devnauts" href="http://devnauts.tistory.com/rss" />
+<link rel="stylesheet" media="screen" type="text/css" href="https://tistory2.daumcdn.net/tistory/1563248/skin/style.css?_T_=1483905812" />
+<link rel="stylesheet" media="print" type="text/css" href="https://tistory2.daumcdn.net/tistory/1563248/skin/images/print.css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="https://tistory2.daumcdn.net/tistory/1563248/skin/images/github-markdown.css">
+<title>devnauts :: [Python] HTTP 요청하기 (httplib 모듈 사용)</title>
+
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shCore.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shLegacy.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushAppleScript.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushAS3.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushBash.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushColdFusion.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushCpp.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushCSharp.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushCss.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushDelphi.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushDiff.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushErlang.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushGroovy.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushJava.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushJavaFx.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushJScript.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushPerl.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushPhp.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushPlain.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushPython.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushRuby.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushSass.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushScala.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushSql.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushVb.js"></script>
+<script type="text/javascript" src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shCore.css">
+<link type="text/css" rel="stylesheet" href="https://tistory2.daumcdn.net/tistory/1563248/skin/images/shThemeDefault.css">
+
+<style type="text/css">
+		#daumSearchBox {
+			height: 21px;
+			background-image : url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bg_search2_2.gif);
+			margin: 5px auto ;
+			padding: 0;
+		}
+		#daumSearchBox input {
+			background: none;
+			margin : 0;
+			padding : 0;
+			border : 0;
+		}
+		#daumSearchBox #daumLogo {
+			width: 34px;
+			height: 21px;
+			float: left;
+			margin-right: 5px;
+			background-image : url(//i1.daumcdn.net/img-media/tistory/img/bg_search1_2_2010ci.gif);
+		}
+		#daumSearchBox #show_q {
+			background-color: transparent;
+			border: none;
+			font: 12px Gulim, Sans-serif;
+			color: #555;
+			margin-top: 4px;
+			margin-right: 15px;
+			float: left;
+		}
+
+		#daumSearchBox #show_btn {
+			background-image : url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bt_search_2.gif);
+			width: 37px;
+			height: 21px;
+			float: left;
+			margin:0;
+			cursor:pointer;
+			text-indent:-1000em;
+		}
+	</style><link rel="stylesheet" href="//t1.daumcdn.net/tistory_admin/blogs/plugins/lightbox/assets/css/lightbox.min.css?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03" />
+<link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/blogs/plugins/TistoryProfileLayer/style.css?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03" />
+<script type="text/javascript" src="//t1.daumcdn.net/tistory_admin/blogs/plugins/TistoryProfileLayer/profile.js?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"></script>
+	<style type="text/css">
+		.another_category { border: 1px solid #E5E5E5; padding: 10px 10px 5px; margin:10px 0; clear: both; }
+		.another_category h4 { font-size: 12px !important; margin: 0 !important; border-bottom: 1px solid #E5E5E5 !important; padding: 2px 0 6px !important; }
+		.another_category h4 a { font-weight: bold !important; }
+		.another_category table { table-layout: fixed; border-collapse: collapse; width: 100% !important; margin-top: 10px !important; }
+		* html .another_category table { width: auto !important; }
+		*:first-child+html .another_category table { width: auto !important; }
+		.another_category th, .another_category td { padding: 0 0 4px !important; }
+		.another_category th { text-align: left; font-size: 12px !important; font-weight: normal;  word-break: break-all; overflow: hidden; line-height: 1.5; }
+		.another_category td { text-align: right; width: 80px; font-size: 11px; }
+		.another_category th a { font-weight: normal; text-decoration: none; border: none !important; }
+		.another_category th a.current{ font-weight: bold; text-decoration: none !important; border-bottom: 1px solid !important; }
+		.another_category th span { font-weight: normal; text-decoration: none; font: 10px Tahoma, Sans-serif; border: none !important; }
+
+		.another_category_color_gray, .another_category_color_gray h4 { border-color: #E5E5E5 !important; }
+		.another_category_color_gray * { color: #909090 !important; }
+		.another_category_color_gray th a.current{border-color:#909090 !important;}
+		.another_category_color_gray h4, .another_category_color_gray h4 a { color: #737373 !important; }
+
+
+		.another_category_color_red, .another_category_color_red h4 { border-color: #F6D4D3 !important;  }
+		.another_category_color_red * { color: #E86869 !important; }
+		.another_category_color_red th a.current{border-color:#E86869 !important;}
+		.another_category_color_red h4, .another_category_color_red h4 a { color: #ED0908 !important; }
+
+
+		.another_category_color_green, .another_category_color_green h4 { border-color: #CCE7C8 !important; }
+		.another_category_color_green * { color: #64C05B !important; }
+		.another_category_color_green th a.current{border-color:#64C05B !important;}
+		.another_category_color_green h4, .another_category_color_green h4 a { color: #3EA731 !important; }
+
+
+		.another_category_color_blue, .another_category_color_blue h4 { border-color: #C8DAF2 !important; }
+		.another_category_color_blue * { color: #477FD6 !important; }
+		.another_category_color_blue th a.current{border-color:#477FD6 !important;}
+		.another_category_color_blue h4, .another_category_color_blue h4 a { color: #1960CA !important; }
+
+
+		.another_category_color_violet, .another_category_color_violet h4 { border-color: #E1CEEC !important;  }
+		.another_category_color_violet * { color:#9D64C5 !important; }
+		.another_category_color_violet th a.current{border-color:#9D64C5 !important;}
+		.another_category_color_violet h4, .another_category_color_violet h4 a { color: #7E2CB5 !important; }
+	</style>
+<script type="text/javascript">
+        window.TistoryBlog = {
+            url: "http://devnauts.tistory.com",
+            tistoryUrl: "http://devnauts.tistory.com"
+        };
+        var servicePath = "";
+        var blogURL = "";
+    </script>
+        <script type="text/javascript" src="//t1.daumcdn.net/tistory_admin/blogs/script/_/base.js?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"></script>
+        <link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/blogs/style/dialog.css?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03" /></head>
+<body>
+
+<script type="text/javascript">
+	(function() {
+		if (!window.T) {
+			window.T = {}
+		}
+		window.T.config = {"TOP_SSL_URL":"https:\/\/www.tistory.com","PREVIEW":false,"ROLE":"guest","PREV_PAGE":"\/113","NEXT_PAGE":"\/110","BLOG":{"isDormancy":false,"title":"devnauts"},"NEED_COMMENT_LOGIN":true,"COMMENT_LOGIN_CONFIRM_MESSAGE":"'devnauts' \ube14\ub85c\uadf8\uc5d0 \ub313\uae00\uc744 \ub0a8\uae30\uc2dc\ub824\uba74 \ud2f0\uc2a4\ud1a0\ub9ac\uc5d0 \ub85c\uadf8\uc778\ud558\uc154\uc57c \ud569\ub2c8\ub2e4. \uc9c0\uae08 \ub85c\uadf8\uc778\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?","LOGIN_URL":"https:\/\/www.tistory.com\/auth\/login\/?redirectUrl=http%3A%2F%2Fdevnauts.tistory.com%2F112","DEFAULT_URL":"http:\/\/devnauts.tistory.com","USER":{"name":null,"homepage":null}};
+	})();
+</script>
+
+<script type="text/javascript" src="//t1.daumcdn.net/tistory_admin/blogs/script/blog/common.js?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"></script>
+<div style="margin:0; padding:0; border:none; background:none; float:none; clear:none; z-index:0"></div>
+	<div id="container">
+		<div id="header">
+			<h1><a href="/">devnauts</a></h1>
+			<div class="blogMenu"><ul>		<li class="t_menu_home first">
+			<a href="/">홈</a>
+		</li>
+				<li class="t_menu_tag last">
+			<a href="/tag">태그</a>
+		</li>
+		</ul></div>
+		</div>
+		<!-- header close -->
+		<hr />
+
+		<div id="content">
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+				<div class="entry">
+					<div class="titleWrap">
+						<h2><a href="/112">[Python] HTTP 요청하기 (httplib 모듈 사용)</a></h2>
+						<span class="category"><a href="/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/Python">1. 실험실/Python</a> </span>
+						<span class="date">2016.12.13 03:05</span>
+						
+					</div><!-- titleWrap close -->
+
+					<div class="article">
+
+						<div class="tt_article_useless_p_margin"><h3 id="기본http요청하기"><br /></h3><h3 id="기본http요청하기">기본 HTTP 요청하기</h3>
+
+<pre class="brush:py">import httplib
+
+conn = httplib.HTTPConnection("httpbin.org")
+
+conn.request("GET", "/ip")
+r1 = conn.getresponse()
+print r1.status, r1.reason
+data1 = r1.read()
+print data1
+
+conn.request("GET", "/get")
+r2 = conn.getresponse()
+print r2.status, r2.reason
+data2 = r2.read()
+print data2
+
+conn.close()
+</pre>
+
+<ul>
+<li>https 접속을 하려면, httplib.HTTPConnection 대신에 httplib.HTTPSConnection을 사용한다.</li></ul><div class="txc-textbox" style="border-style: solid; border-width: 1px; border-color: rgb(121, 165, 228); background-color: rgb(219, 232, 251); padding: 10px;"><p>&gt; conn = httplib.HTTPSConnection("httpbin.org")</p></div><ul>
+</ul><p>
+
+
+
+</p><ul>
+<li>특정 포트 지정시는 아래와 같은 방법 중 한가지를 사용한다.</li>
+</ul><div class="txc-textbox" style="border-style: solid; border-width: 1px; border-color: rgb(121, 165, 228); background-color: rgb(219, 232, 251); padding: 10px;"><p>
+
+&gt; conn = httplib.HTTPConnection("httpbin.org:80") <br /></p><p>&gt; conn = httplib.HTTPConnection("httpbin.org", 80)
+
+</p></div><h3 id="post요청하기"><br /></h3><h3 id="post요청하기">POST 요청하기</h3>
+
+<pre class="brush:py">import httplib, urllib
+
+conn = httplib.HTTPConnection("httpbin.org")
+
+params = urllib.urlencode({'spam': 1, 'eggs': 2, 'bacon': 0})
+headers = {"Content-type": "application/x-www-form-urlencoded",
+           "Accept": "text/plain"}
+conn.request("POST", "/post", params, headers)
+response = conn.getresponse()
+print response.status, response.reason
+data = response.read()
+print data
+
+params = "test string"
+headers = {"Content-type": "text/html"}
+conn.request("POST", "/post", params, headers)
+response = conn.getresponse()
+print response.status, response.reason
+data = response.read()
+print data
+
+conn.close()
+</pre>
+
+<h3 id="참고사이트"><br /></h3><h3 id="참고사이트">참고 사이트</h3>
+
+<ul>
+<li>http://httpbin.org : 각종 HTTP 요청들에 대한 응답을 테스트할 수 있는 사이트</li></ul><p><br /></p><div class="txc-textbox" style="border-style: solid; border-width: 1px; border-color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); padding: 10px;"><p>&lt;테스트 환경&gt;</p><p>&nbsp;- OS : Windows 7<br />&nbsp;- Python 버전 : 2.7</p></div><ul>
+</ul><p><br /></p><div style="text-align:center;margin:10px 0 10px 0;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 중형01 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1523747654781398"
+     data-ad-slot="9947383663"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div style="width:100%;margin-top:30px;clear:both;height:30px">		<div class="entry-ccl" style="float:right;margin-top:0;height:0">
+			<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.ko" target="_blank" style="text-decoration: none">
+				<img id="ccl-icon-112-0" class="entry-ccl-by" src="//t1.daumcdn.net/tistory_admin/static/admin/editor/ccl_black01.png?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"
+				     onmouseover="tistoryCcl.show(this, 5)"
+				     onmouseout="tistoryCcl.hide()" alt="저작자 표시" style="width:15px;height:15px"/>
+									<img id="ccl-icon-112-1" class="entry-ccl-nc"
+					     src="//t1.daumcdn.net/tistory_admin/static/admin/editor/ccl_black02.png?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"
+					     onmouseover="tistoryCcl.show(this, 5)"
+					     onmouseout="tistoryCcl.hide()" alt="비영리" style="width:15px;height:15px"/>
+												<img id="ccl-icon-112-2" class="entry-ccl-sa"
+							     src="//t1.daumcdn.net/tistory_admin/static/admin/editor/ccl_black04.png?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"
+							     onmouseover="tistoryCcl.show(this, 5)"
+							     onmouseout="tistoryCcl.hide()" alt="동일 조건 변경 허락"
+							     style="width:15px;height:15px"/>
+											<!--
+	<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/kr/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/">
+			<permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+			<permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+			<requires rdf:resource="http://web.resource.org/cc/Notice"/>
+			<requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+			<prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/>
+		</License>
+	</rdf:RDF>
+	-->
+			</a>
+		</div>
+					<script type="text/javascript">
+				if (/MSIE [0-6]\./.test(navigator.userAgent)) {
+					for (var i = 0; i <3; i++) {
+						var el = document.getElementById('ccl-icon-112-' + i);
+						el.style.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + el.src + '",sizingMethod="image")';
+						el.src = '//t1.daumcdn.net/tistory_admin/static/admin/form/s.gif?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03';
+					}
+				}
+			</script>
+			<div style="width:31px;float:left;"><a href="/toolbar/popup/abuseReport/?entryId=112" onclick="window.open(this.href, 'tistoryThisBlogPopup', 'width=550, height=510, toolbar=no, menubar=no, status=no, scrollbars=no'); return false;"><img style="border:0" src="//t1.daumcdn.net/tistory_admin/static/ico/ico_spam_report.png" alt="신고"></a></div></div><div class="another_category another_category_color_gray">
+<h4>'<a href="/category/1.%20실험실">1. 실험실</a>&nbsp;>&nbsp;<a href="/category/1.%20실험실/Python">Python</a>' 카테고리의 다른 글</h4>
+<table>
+<tr>
+<th>
+<a href="http://devnauts.tistory.com/120" >[Python] HTML 파싱하기 (Beautiful Soup 모듈 사용)</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2017.02.01</td>
+</tr>
+<tr>
+<th>
+<a href="http://devnauts.tistory.com/117" >[Python] HTTP 요청하기 (requests 모듈 사용)</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2016.12.29</td>
+</tr>
+<tr>
+<th>
+<a href="http://devnauts.tistory.com/112"  class ="current" >[Python] HTTP 요청하기 (httplib 모듈 사용)</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2016.12.13</td>
+</tr>
+<tr>
+<th>
+<a href="http://devnauts.tistory.com/103" >[Python] Python에서 패키지 관리 시스템(PIP) 사용하기</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2016.10.18</td>
+</tr>
+<tr>
+<th>
+<a href="http://devnauts.tistory.com/69" >[Python 팁] Python에서 한글 사용</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2015.09.29</td>
+</tr>
+<tr>
+<th>
+<a href="http://devnauts.tistory.com/68" >[wxPython] Launcher 어플 Template</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2015.09.29</td>
+</tr>
+</table></div></div>
+
+
+					</div>
+					<div class="author">
+						<span class="text">Posted by </span>devnauts
+					</div>
+
+					
+						<div class="tagTrail">
+							<span class="tagText">TAG </span> <a href="/tag/Python"  rel="tag">Python</a>
+						</div>
+					
+
+					<div class="actionTrail">
+							<a href="#tb" onclick="toggleLayerForEntry(112, 'trackback'); return false"><span id="trackbackCount112">트랙백이 없고</span></a>,
+							<a href="#rp" onclick="toggleLayerForEntry('112', 'comment'); return false"><span id="commentCount112">댓글이 없습니다.</span></a>
+					</div>
+
+					<div id="entry112Trackback" style="display:none">
+						<div class="trackback">
+							<h3>트랙백 주소 :: </h3>
+							
+						</div><!-- trackback close -->
+					</div>
+
+					<div id="entry112Comment" style="display:none"></div>
+				</div><!-- entry close -->
+			
+
+			
+				<div id="paging">
+					<a  href='/113' class="" id="prevPage">이전</a>
+					<span class="numbox">
+						
+						<a  href='/137' class="num"> <span>1</span></a>
+						
+						<a  class="num"> <span>&middot;&middot;&middot;</span></a>
+						
+						<a  href='/116' class="num"> <span>20</span></a>
+						
+						<a  href='/90' class="num"> <span>21</span></a>
+						
+						<a  href='/115' class="num"> <span>22</span></a>
+						
+						<a  href='/113' class="num"> <span>23</span></a>
+						
+						<a  class="num"> <span class="selected" >24</span></a>
+						
+						<a  href='/110' class="num"> <span>25</span></a>
+						
+						<a  href='/107' class="num"> <span>26</span></a>
+						
+						<a  href='/94' class="num"> <span>27</span></a>
+						
+						<a  href='/105' class="num"> <span>28</span></a>
+						
+						<a  class="num"> <span>&middot;&middot;&middot;</span></a>
+						
+						<a  href='/2' class="num"> <span>103</span></a>
+						
+					</span>
+					<a  href='/110' class="" id="nextPage">다음</a>
+				</div>
+			
+		</div><!-- content close -->
+		<hr />
+
+		<div id="sidebar">
+			
+				<!-- 검색 모듈 -->
+					<div id="searchBox">
+						
+							<input type="text" name="search" value="" onkeypress="if (event.keyCode == 13) { try{window.location.href='/search/'+looseURIEncode(document.getElementsByName('search')[0].value);document.getElementsByName('search')[0].value='';return false;}catch(e){} }"/>
+							<input value="검색" type="button" onclick="try{window.location.href='/search/'+looseURIEncode(document.getElementsByName('search')[0].value);document.getElementsByName('search')[0].value='';return false;}catch(e){}" class="submit"/>
+						
+					</div>
+				
+				<!-- 관리자 모듈 -->
+					<div id="adminMenu">
+						<ul>
+							<li class="tab_admin">
+								<a href="/admin"><img src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/btn_admin.gif" alt="관리자" /></a></li>
+							<li class="tab_write">
+								<a href="/admin/entry/post"><img src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/btn_write.gif" alt="글쓰기" /></a></li>
+						</ul>
+					</div>
+				
+				<!-- 카테고리 모듈 -->
+					<div id="category">
+						<h3>카테고리</h3>
+						<script type="text/javascript">
+	//<![CDATA[
+	var expanded = false;
+	function expandTree() {
+								expandFolder(517181, true);
+											}
+
+	function expandFolder(category, expand) {
+		var oLevel1 = document.getElementById("category_" + category);
+		var oImg = oLevel1.getElementsByTagName("img")[0];
+		switch (expand) {
+			case true:
+				oImg.src = "//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_opened.gif";
+				showLayer("category_" + category + "_children");
+				return true;
+			case false:
+				oImg.src = "//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_closed.gif";
+				hideLayer("category_" + category + "_children");
+				return true;
+		}
+		return false;
+	}
+
+	function toggleFolder(category) {
+		var oLevel1 = document.getElementById("category_" + category);
+		var oImg = oLevel1.getElementsByTagName("img")[0];
+		switch (oImg.src.substr(oImg.src.length - 10, 6)) {
+			case "isleaf":
+				return true;
+			case "closed":
+				oImg.src = "//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_opened.gif";
+				tt_showLayer("category_" + category + "_children");
+				expanded = true;
+				return true;
+			case "opened":
+				oImg.src = "//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_closed.gif";
+				tt_hideLayer("category_" + category + "_children");
+				expanded = false;
+				return true;
+		}
+		return false;
+	}
+	var selectedNode = 0;
+	function selectNode(category) {
+
+		try {
+			var root = document.getElementById('treeComponent');
+			var prevSelectedNode= root.getAttribute('currentselectednode');
+			var oLevel = document.getElementById("category_" + selectedNode);
+			var oChild = oLevel.getElementsByTagName("table")[0];
+
+			oChild.style.color = "#000000";
+						oChild.style.backgroundColor = "#ffffff"
+			root.setAttribute('currentselectednode',category);
+			document.getElementById('text_'+selectedNode).style.color="#000000";
+
+			var oLevel = document.getElementById("category_" + category);
+			var oChild = oLevel.getElementsByTagName("table")[0];
+			oChild.style.color = "#000000";
+						oChild.style.backgroundColor = "#eeeeee"
+			document.getElementById('text_'+category).style.color="#000000";
+
+			selectedNode = category;
+		} catch(e) {
+		}
+	}
+
+	function setTreeStyle(skin) {
+		try {
+			treeNodes = document.getElementsByName("treeNode");
+			for(var i=0; i<treeNodes.length; i++) {
+				if( ('category_'+selectedNode) == (treeNodes[i].getAttribute('id').value) ) {
+					var oLevel = document.getElementById('category_'+i);
+					var oChild = oLevel.getElementsByTagName("table")[0];
+					oChild.style.color ='#'+skin['activeItemColor'];
+					if (skin['activeItemBgColor'] != '' && skin['activeItemBgColor'] != undefined) {
+						oChild.style.backgroundColor ='#'+skin['activeItemBgColor'];
+					} else {
+						oChild.style.backgroundColor ="";
+					}
+				} else{
+					var oLevel = document.getElementById("category_" + i);
+					var oChild = oLevel.getElementsByTagName("table")[0];
+					oChild.style.color ='#'+skin['colorOnTree'];
+					oChild.style.backgroundColor ='#'+skin['bgColorOnTree'];
+					var oLevel = document.getElementById('text_'+i).style.color='#'+skin['colorOnTree'];
+				}
+			}
+		} catch(e) {
+		}
+	}
+	//]]>
+</script>
+
+
+<table id="treeComponent" cellpadding="0" cellspacing="0" style="width: 100%;"><tr>
+	<td>
+		<table id="category_0" cellpadding="0" cellspacing="0"><tr>
+			<td class="ib" style="font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_top.gif" width="16" onclick="expandTree()" alt="" style="display:block"/></td>
+			<td valign="top" style="font-size:9pt; padding-left:3px">
+				<table id="imp0" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+										<td class="branch3" onclick="window.location.href='/category'">
+						<div id="text_0" style=" color: #000000;">분류 전체보기						<span class="c_cnt">(103)</span>						</div>
+					</td>
+				</tr></table>
+			</td>
+		</tr></table>
+
+					<table id="category_517181" cellpadding="0" cellspacing="0"><tr>
+					<td class="ib" style="width:39px; font-size: 1px; background-image: url('//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_noactive.gif"><a class="click" onclick="toggleFolder('517181')"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_closed.gif" width="39" alt=""/></a></td>
+					<td>
+						<table cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+								<td class="branch3" onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4'"><div id="text_517181" style="color: #000000;">1. 실험실 <span class="c_cnt">(97)</span></div></td>
+							</tr></table>
+					</td>
+				</tr></table>
+			<div id="category_517181_children" style="display:none">
+									<table id="category_576167" cellpadding="0" cellspacing="0"><tr>
+							<td style="width:39px; font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_active.gif" width="17" height="18" alt=""/><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_treed.gif" width="22" alt=""/></td>
+							<td>
+								<table onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/Cocos2d'" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+										<td class="branch3"><div id="text_576167" style="color: #000000;">Cocos2d <span class="c_cnt">(4)</span></div></td>
+									</tr></table>
+							</td>
+						</tr></table>
+										<table id="category_616583" cellpadding="0" cellspacing="0"><tr>
+							<td style="width:39px; font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_active.gif" width="17" height="18" alt=""/><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_treed.gif" width="22" alt=""/></td>
+							<td>
+								<table onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/Emacs'" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+										<td class="branch3"><div id="text_616583" style="color: #000000;">Emacs <span class="c_cnt">(13)</span></div></td>
+									</tr></table>
+							</td>
+						</tr></table>
+										<table id="category_616582" cellpadding="0" cellspacing="0"><tr>
+							<td style="width:39px; font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_active.gif" width="17" height="18" alt=""/><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_treed.gif" width="22" alt=""/></td>
+							<td>
+								<table onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/Lisp%20-%20Common%20Lisp'" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+										<td class="branch3"><div id="text_616582" style="color: #000000;">Lisp - Common Lisp <span class="c_cnt">(10)</span></div></td>
+									</tr></table>
+							</td>
+						</tr></table>
+										<table id="category_697209" cellpadding="0" cellspacing="0"><tr>
+							<td style="width:39px; font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_active.gif" width="17" height="18" alt=""/><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_treed.gif" width="22" alt=""/></td>
+							<td>
+								<table onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/Lisp%20-%20Clojure'" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+										<td class="branch3"><div id="text_697209" style="color: #000000;">Lisp - Clojure <span class="c_cnt">(7)</span></div></td>
+									</tr></table>
+							</td>
+						</tr></table>
+										<table id="category_684508" cellpadding="0" cellspacing="0"><tr>
+							<td style="width:39px; font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_active.gif" width="17" height="18" alt=""/><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_treed.gif" width="22" alt=""/></td>
+							<td>
+								<table onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/Node.js'" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+										<td class="branch3"><div id="text_684508" style="color: #000000;">Node.js <span class="c_cnt">(5)</span></div></td>
+									</tr></table>
+							</td>
+						</tr></table>
+										<table id="category_517180" cellpadding="0" cellspacing="0"><tr>
+							<td style="width:39px; font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_active.gif" width="17" height="18" alt=""/><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_treed.gif" width="22" alt=""/></td>
+							<td>
+								<table onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/Python%20-%20pyBox2D'" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+										<td class="branch3"><div id="text_517180" style="color: #000000;">Python - pyBox2D <span class="c_cnt">(9)</span></div></td>
+									</tr></table>
+							</td>
+						</tr></table>
+										<table id="category_517746" cellpadding="0" cellspacing="0"><tr>
+							<td style="width:39px; font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_active.gif" width="17" height="18" alt=""/><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_treed.gif" width="22" alt=""/></td>
+							<td>
+								<table onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/Python'" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+										<td class="branch3"><div id="text_517746" style="color: #000000;">Python <span class="c_cnt">(14)</span></div></td>
+									</tr></table>
+							</td>
+						</tr></table>
+										<table id="category_536558" cellpadding="0" cellspacing="0"><tr>
+							<td style="width:39px; font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_active.gif" width="17" height="18" alt=""/><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_treed.gif" width="22" alt=""/></td>
+							<td>
+								<table onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/%EB%AA%A8%EB%B0%94%EC%9D%BC%20%ED%95%98%EC%9D%B4%EB%B8%8C%EB%A6%AC%EB%93%9C%20%EC%95%B1'" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+										<td class="branch3"><div id="text_536558" style="color: #000000;">모바일 하이브리드 앱 <span class="c_cnt">(10)</span></div></td>
+									</tr></table>
+							</td>
+						</tr></table>
+										<table id="category_536861" cellpadding="0" cellspacing="0"><tr>
+							<td style="width:39px; font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_active.gif" width="17" height="18" alt=""/><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_treed.gif" width="22" alt=""/></td>
+							<td>
+								<table onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/%EB%B9%84%EB%B6%84%EB%A5%98'" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+										<td class="branch3"><div id="text_536861" style="color: #000000;">비분류 <span class="c_cnt">(19)</span></div></td>
+									</tr></table>
+							</td>
+						</tr></table>
+										<table id="category_695077" cellpadding="0" cellspacing="0"><tr>
+							<td style="width:39px; font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_active.gif" width="17" height="18" alt=""/><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_treed_end.gif" width="22" alt=""/></td>
+							<td>
+								<table onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8'" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+										<td class="branch3"><div id="text_695077" style="color: #000000;">텔레그램 <span class="c_cnt">(6)</span></div></td>
+									</tr></table>
+							</td>
+						</tr></table>
+								</div>
+						<table id="category_560206" cellpadding="0" cellspacing="0"><tr>
+					<td class="ib" style="width:39px; font-size: 1px; background-image: url('//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_noactive_end.gif"><a class="click" onclick="toggleFolder('560206')"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_isleaf.gif" width="39" alt=""/></a></td>
+					<td>
+						<table cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
+								<td class="branch3" onclick="window.location.href='/category/2.%20%EB%9D%BC%EC%9A%B4%EC%A7%80'"><div id="text_560206" style="color: #000000;">2. 라운지 <span class="c_cnt">(6)</span></div></td>
+							</tr></table>
+					</td>
+				</tr></table>
+			<div id="category_560206_children" style="display:none">
+							</div>
+				</td>
+</tr></table>
+					</div>
+				
+				<!-- 태그목록 모듈 -->
+					<div id="tagbox">
+						<h3>태그목록</h3>
+						<ul>
+							
+								<li><a href="/tag/Perl" class="cloud5"> Perl</a></li>
+							
+								<li><a href="/tag/%ED%8C%8C%EC%9D%B4%EC%8D%AC" class="cloud4"> 파이썬</a></li>
+							
+								<li><a href="/tag/Clojure" class="cloud3"> Clojure</a></li>
+							
+								<li><a href="/tag/react" class="cloud4"> react</a></li>
+							
+								<li><a href="/tag/EmacsW32" class="cloud5"> EmacsW32</a></li>
+							
+								<li><a href="/tag/%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8" class="cloud4"> 텔레그램</a></li>
+							
+								<li><a href="/tag/Lazarus" class="cloud5"> Lazarus</a></li>
+							
+								<li><a href="/tag/Python" class="cloud1"> Python</a></li>
+							
+								<li><a href="/tag/pygame" class="cloud4"> pygame</a></li>
+							
+								<li><a href="/tag/%EC%9C%88%EB%8F%84%EC%9A%B0" class="cloud5"> 윈도우</a></li>
+							
+								<li><a href="/tag/PhoneGap" class="cloud4"> PhoneGap</a></li>
+							
+								<li><a href="/tag/TortoiseGit" class="cloud5"> TortoiseGit</a></li>
+							
+								<li><a href="/tag/Markdown" class="cloud4"> Markdown</a></li>
+							
+								<li><a href="/tag/wxPython" class="cloud4"> wxPython</a></li>
+							
+								<li><a href="/tag/emacs" class="cloud3"> emacs</a></li>
+							
+								<li><a href="/tag/%EC%9B%94%ED%8E%98%EC%9D%B4%ED%8D%BC" class="cloud5"> 월페이퍼</a></li>
+							
+								<li><a href="/tag/TortoiseSVN" class="cloud5"> TortoiseSVN</a></li>
+							
+								<li><a href="/tag/Lisp" class="cloud2"> Lisp</a></li>
+							
+								<li><a href="/tag/Sencha%20Touch" class="cloud3"> Sencha Touch</a></li>
+							
+								<li><a href="/tag/sbcl" class="cloud4"> sbcl</a></li>
+							
+								<li><a href="/tag/cocos2d" class="cloud4"> cocos2d</a></li>
+							
+								<li><a href="/tag/%EC%83%9D%ED%99%9C%EC%A0%95%EB%B3%B4" class="cloud4"> 생활정보</a></li>
+							
+								<li><a href="/tag/vaadin" class="cloud4"> vaadin</a></li>
+							
+								<li><a href="/tag/pyBox2D" class="cloud4"> pyBox2D</a></li>
+							
+								<li><a href="/tag/pascal" class="cloud5"> pascal</a></li>
+							
+								<li><a href="/tag/node.js" class="cloud3"> node.js</a></li>
+							
+						</ul>
+					</div>
+				
+				<!-- 최근 포스트 모듈 -->
+					<div id="recentPost">
+						<h3>최근에 올라온 글 </h3>
+						<ul>
+							
+								<li>
+									<a href="/137"> [React Native] react-nati...</a>
+									<span class="cnt"><span id="commentCountOnRecentEntries137"></span></span>
+								</li>
+							
+
+								<li>
+									<a href="/136"> [Emacs] 버퍼를 닫으면서...</a>
+									<span class="cnt"><span id="commentCountOnRecentEntries136"></span></span>
+								</li>
+							
+
+								<li>
+									<a href="/135"> [겉핥기 프로젝트] React N...</a>
+									<span class="cnt"><span id="commentCountOnRecentEntries135"></span></span>
+								</li>
+							
+
+								<li>
+									<a href="/134"> [겉핥기 프로젝트] 자바스...</a>
+									<span class="cnt"><span id="commentCountOnRecentEntries134"></span></span>
+								</li>
+							
+
+								<li>
+									<a href="/133"> 라즈베리파이 제로 USB 포...</a>
+									<span class="cnt"><span id="commentCountOnRecentEntries133"></span></span>
+								</li>
+							
+						</ul>
+					</div>
+				
+				<!-- 최근 보관함 모듈 -->
+					<div id="archive">
+						<h3>글 보관함</h3>
+						<ul>
+							
+								<li>
+									<a href="/archive/201708">2017/08 </a>
+									<span class="cnt">(3)</span>
+								</li>
+							
+
+								<li>
+									<a href="/archive/201707">2017/07 </a>
+									<span class="cnt">(1)</span>
+								</li>
+							
+
+								<li>
+									<a href="/archive/201706">2017/06 </a>
+									<span class="cnt">(3)</span>
+								</li>
+							
+
+								<li>
+									<a href="/archive/201705">2017/05 </a>
+									<span class="cnt">(2)</span>
+								</li>
+							
+
+								<li>
+									<a href="/archive/201703">2017/03 </a>
+									<span class="cnt">(1)</span>
+								</li>
+							
+						</ul>
+					</div>
+				
+				<!-- 달력 모듈 -->
+					<div id="calendar">
+						<h3>달력</h3>
+								<table class="tt-calendar" cellpadding="0" cellspacing="1" style="width: 100%; table-layout: fixed">
+			<caption class="cal_month">
+				<a href="/archive/201708" title="1개월 앞의 달력을 보여줍니다.">&laquo;</a>
+				&nbsp;
+				<a href="/archive/201709"
+				   title="현재 달의 달력을 보여줍니다.">2017/09</a>
+				&nbsp;
+				<a href="/archive/201710" title="1개월 뒤의 달력을 보여줍니다.">&raquo;</a>
+			</caption>
+			<thead>
+			<tr>
+				<th class="cal_week2">일</th>
+				<th class="cal_week1">월</th>
+				<th class="cal_week1">화</th>
+				<th class="cal_week1">수</th>
+				<th class="cal_week1">목</th>
+				<th class="cal_week1">금</th>
+				<th class="cal_week1">토</th>
+			</tr>
+			</thead>
+			<tbody>
+					<tr class="cal_week">
+			<td class="cal_day1">&nbsp;</td>
+			<td class="cal_day1">&nbsp;</td>
+			<td class="cal_day1">&nbsp;</td>
+			<td class="cal_day1">&nbsp;</td>
+			<td class="cal_day1">&nbsp;</td>
+			<td class=" cal_day cal_day3">1</td>
+			<td class=" cal_day cal_day3">2</td>
+		</tr>
+		<tr class="cal_week cal_current_week">
+			<td class=" cal_day cal_day_sunday cal_day3">3</td>
+			<td class=" cal_day cal_day3">4</td>
+			<td class=" cal_day cal_day3">5</td>
+			<td class=" cal_day cal_day3">6</td>
+			<td class=" cal_day cal_day3">7</td>
+			<td class=" cal_day cal_day4">8</td>
+			<td class=" cal_day cal_day3">9</td>
+		</tr>
+		<tr class="cal_week">
+			<td class=" cal_day cal_day_sunday cal_day3">10</td>
+			<td class=" cal_day cal_day3">11</td>
+			<td class=" cal_day cal_day3">12</td>
+			<td class=" cal_day cal_day3">13</td>
+			<td class=" cal_day cal_day3">14</td>
+			<td class=" cal_day cal_day3">15</td>
+			<td class=" cal_day cal_day3">16</td>
+		</tr>
+		<tr class="cal_week">
+			<td class=" cal_day cal_day_sunday cal_day3">17</td>
+			<td class=" cal_day cal_day3">18</td>
+			<td class=" cal_day cal_day3">19</td>
+			<td class=" cal_day cal_day3">20</td>
+			<td class=" cal_day cal_day3">21</td>
+			<td class=" cal_day cal_day3">22</td>
+			<td class=" cal_day cal_day3">23</td>
+		</tr>
+		<tr class="cal_week">
+			<td class=" cal_day cal_day_sunday cal_day3">24</td>
+			<td class=" cal_day cal_day3">25</td>
+			<td class=" cal_day cal_day3">26</td>
+			<td class=" cal_day cal_day3">27</td>
+			<td class=" cal_day cal_day3">28</td>
+			<td class=" cal_day cal_day3">29</td>
+			<td class=" cal_day cal_day3">30</td>
+		</tr>
+			</tbody>
+		</table>
+		
+					</div>
+				
+				<!-- 카운터 모듈 -->
+					<div id="counter">
+						<ul>
+							<li class="total">Total : 25,509 </li>
+							<li class="today">Today : 43</li>
+							<li class="yesterday">Yesterday : 67</li>
+						</ul>
+					</div>
+				
+
+			
+				<!-- 배너 모듈 - 티스토리 -->
+					<div id="adTistory">
+						<a href="http://www.tistory.com"><img src="http://t1.daumcdn.net/tistory_admin/static/top/skin/tistoryBanner01.png" alt="tistory" /></a>
+						<div class="tistoryJoin"><a href="http://www.tistory.com/join">티스토리 가입하기!</a></div>
+					</div>
+				
+				<!-- RSS 링크 -->
+					<div id="btnRSS">
+						<a href="http://devnauts.tistory.com/rss" onclick="window.open(this.href); return false">
+						<img src="https://tistory2.daumcdn.net/tistory/1563248/skin/images/rss.gif" alt="rss"/> </a>
+					</div>
+				
+		</div><!-- sidebar close -->
+		<hr />
+
+		<div id="footer">
+			<div class="footMenu">
+				<a href="/location">지역로그</a> :
+				<a href="/tag">태그</a> :
+			    <a href="/media">미디어로그</a> :
+				<a href="/guestbook">방명록</a> :
+				<a href="/admin">관리자</a> :
+				<a href="/admin/entry/post">글쓰기</a>
+			</div>
+			<div class="copyright">
+				<a href="/"> devnauts</a>'s Blog is powered by <a href="http://daum.net" onclick="window.open(this.href); return false">Daum</a>  / Designed by <a href="http://www.tistory.com">Tistory</a>
+			</div>
+		</div>
+	</div><!-- container close -->
+
+
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all();
+</script>
+
+<script src="//search1.daumcdn.net/search/statics/common/js/2017/search_dragselection.min.20170308053514.js"></script>
+<script>
+(function($) {
+	$("body").bind('copy', function (e) {
+	    var url = document.location.href,
+			decodedUrl = decodeURI(url),
+			selection = window.getSelection();
+
+
+		if (typeof window.getSelection == "undefined") {//IE8 or earlier...
+			event.preventDefault();
+
+			var pagelink = '\n\n 출처: ' + decodedUrl,
+				copytext =  selection + pagelink;
+
+			if (window.clipboardData) {
+				window.clipboardData.setData('Text', copytext);
+			}
+			return;
+		}
+		var body_element = document.getElementsByTagName('body')[0];
+
+		//if the selection is short let's not annoy our users
+		if (("" + selection).length < 30) return;
+
+		//create a div outside of the visible area
+		var newdiv = document.createElement('div');
+		newdiv.style.position = 'absolute';
+		newdiv.style.left = '-99999px';
+		body_element.appendChild(newdiv);
+		newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+		//we need a <pre> tag workaround
+		//otherwise the text inside "pre" loses all the line breaks!
+		if (selection.getRangeAt(0).commonAncestorContainer.nodeName == "PRE") {
+			newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+		}
+
+		newdiv.innerHTML += '<br /><br />출처: <a href="' + url + '">' + decodedUrl + '</a> [devnauts]';
+
+		selection.selectAllChildren(newdiv);
+		window.setTimeout(function () { body_element.removeChild(newdiv); }, 200);
+	});
+})(tjQuery);
+</script><script src="//t1.daumcdn.net/tistory_admin/blogs/plugins/lightbox/assets/js/lightbox.min.js?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"></script>
+	<script>
+	    lightbox.option({
+			"fadeDuration": 200,
+		    "resizeDuration": 200,
+		    "wrapAround": false,
+			"albumLabel": "%1 / %2",
+			"fitImagesInViewport":true ,
+			"stopEvent": false
+	    })
+	</script><script type="text/javascript">
+var _tiq = 'undefined' !== typeof _tiq ? _tiq : []; // Global Variables
+_tiq.push(["__setParam", "title", "devnauts :: [Python] HTTP 요청하기 (httplib 모듈 사용)"]);
+_tiq.push(["__setParam", "svcdomain", "user.tistory.com"]);
+_tiq.push(["__setParam", "category", ""]);
+_tiq.push(["__setParam", "articleno", "112"]);
+_tiq.push(["__setParam", "plink", "http://devnauts.tistory.com/112"]);
+_tiq.push(["__setParam", "date", "2016-12-13 03:05:33"]);
+_tiq.push(["__setParam", "author", "devnauts"]);
+_tiq.push(["__setParam", "length", "2410"]);
+_tiq.push(["__setParam", "isauthor", "N"]);
+_tiq.push(["__setParam", "ishidden", "1"]);
+_tiq.push(["__setParam", "comments", "0"]);
+_tiq.push(["__setParam", "param1", "0"]);
+_tiq.push(["__setParam", "param2", "e"]);
+_tiq.push(["__setParam", "param3", ""]);
+_tiq.push(["__trackPageview"]);
+(function(d) {
+	var se = d.createElement('script'); se.type = 'text/javascript'; se.async = true;
+	se.src = location.protocol + '//m2.daumcdn.net/tiara/js/td.min.js';
+	var s = d.getElementsByTagName('head')[0]; s.appendChild(se);
+})(document);
+</script>
+<script type="text/javascript">
+var __TiaraObj = __TiaraObj || {}; if ('undefined' === typeof __TiaraObj.startTime) { __TiaraObj.startTime = new Date(); }
+var addEvent = function (evt, fn) { window.addEventListener ? window.addEventListener(evt, fn, false) : window.attachEvent('on' + evt, fn); };
+var ua = navigator.userAgent.toLowerCase(); var isIOS = /iP[ao]d|iPhone/i.test(ua); var contentStat = function() {
+_tiq.push(['__content', 't_content', {
+"c_id":"1563248_112", 
+"c_title":"devnauts :: [Python] HTTP 요청하기 (httplib 모듈 사용)", 
+"type":"article", 
+"author":"devnauts", 
+"author_id":"1179419", 
+"cp":"devnauts", 
+"cp_id":"1563248", 
+"regdata":"2016-12-13 03:05:33", 
+"plink":"http://devnauts.tistory.com/112", 
+"media":"pcweb", 
+"comment_cnt":0, 
+"duration": (new Date()).getTime() - __TiaraObj.startTime.getTime()
+}]); };
+addEvent(isIOS ? "pagehide" : "beforeunload", contentStat);
+</script>
+<script type="text/javascript">window.roosevelt_params_queue = window.roosevelt_params_queue || []; window.roosevelt_params_queue.push({channel_id: "dk", channel_label: "tistory"});</script>
+<script type="text/javascript" src="//t1.daumcdn.net/midas/rt/dk_bt/roosevelt_dk_bt.js" async></script><script type="text/javascript">if(window.console!=undefined){setTimeout(console.log.bind(console,"%cTISTORY","font:8em Arial;color:#EC6521;font-weight:bold"),0);setTimeout(console.log.bind(console,"%c  나를 표현하는 블로그","font:2em sans-serif;color:#333;"),0);}</script><iframe style="position:absolute;width:1px;height:1px;left:-100px;top:-100px" src="http://devnauts.tistory.com/api" id="editEntry"></iframe></body>
+</html>

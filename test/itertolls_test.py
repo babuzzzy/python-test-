@@ -12,14 +12,14 @@ decimals = [0.1,0.7,0.4,0.5]
 #print list(itertools.chain(letters, booleans, decimals))
 characters='7012835964'
 
-#print list(itertools.product(characters,repeat = 3))
+print list(itertools.product(characters,repeat = 2))
 
 #random.sample()
 
 num=open('test.txt','w')
 #num.write(test)
 num.close()
-print list(itertools.product([1,2,3],[3,4]))
+#print list(itertools.product([1,2,3],[3,4]))
 
 
 #print list(itertools.product([7012835964],repeat=8))

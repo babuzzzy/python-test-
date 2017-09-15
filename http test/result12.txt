@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/blogs/style/menubar.css?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03" /><!--[if lt IE 9]><script src="https://t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script><![endif]--><!--[if gte IE 9]>
+<link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/blogs/style/menubar.css?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098" /><!--[if lt IE 9]><script src="https://t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script><![endif]--><!--[if gte IE 9]>
 <!--><script src="https://t1.daumcdn.net/tistory_admin/lib/jquery/jquery-3.2.1.min.js"></script><!--<![endif]-->
 <script>var tjQuery = jQuery.noConflict(true);</script><style type="text/css">.tt_article_useless_p_margin p {padding-top:0 !important;padding-bottom:0 !important;margin-top:0 !important;margin-bottom:0 !important;}</style><meta name="referrer" content="always"><link rel="shortcut icon" href="//t1.daumcdn.net/tistory_admin/static/top/favicon_0630.ico" /><meta name="description" content="기본 HTTP 요청하기 import httplib conn = httplib.HTTPConnection(&quot;httpbin.org&quot;) conn.request(&quot;GET&quot;, &quot;/ip&quot;) r1 = conn.getresponse() print r1.status, r1.reason data1 = r1.read() print data1 conn.request(&quot;GET&quot;, &quot;/get&quot;) r2 = conn.getresponse() print r2.status, r2.reason data2 = r2.read() print data2 conn.close() https 접속을 하려면, httplib.HTTPConnection 대신에 httplib.HTTPSConnection을 사용한다. &gt;..">
 
@@ -110,9 +110,9 @@
 			cursor:pointer;
 			text-indent:-1000em;
 		}
-	</style><link rel="stylesheet" href="//t1.daumcdn.net/tistory_admin/blogs/plugins/lightbox/assets/css/lightbox.min.css?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03" />
-<link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/blogs/plugins/TistoryProfileLayer/style.css?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03" />
-<script type="text/javascript" src="//t1.daumcdn.net/tistory_admin/blogs/plugins/TistoryProfileLayer/profile.js?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"></script>
+	</style><link rel="stylesheet" href="//t1.daumcdn.net/tistory_admin/blogs/plugins/lightbox/assets/css/lightbox.min.css?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098" />
+<link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/blogs/plugins/TistoryProfileLayer/style.css?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098" />
+<script type="text/javascript" src="//t1.daumcdn.net/tistory_admin/blogs/plugins/TistoryProfileLayer/profile.js?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098"></script>
 	<style type="text/css">
 		.another_category { border: 1px solid #E5E5E5; padding: 10px 10px 5px; margin:10px 0; clear: both; }
 		.another_category h4 { font-size: 12px !important; margin: 0 !important; border-bottom: 1px solid #E5E5E5 !important; padding: 2px 0 6px !important; }
@@ -164,8 +164,8 @@
         var servicePath = "";
         var blogURL = "";
     </script>
-        <script type="text/javascript" src="//t1.daumcdn.net/tistory_admin/blogs/script/_/base.js?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"></script>
-        <link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/blogs/style/dialog.css?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03" /></head>
+        <script type="text/javascript" src="//t1.daumcdn.net/tistory_admin/blogs/script/_/base.js?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098"></script>
+        <link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/blogs/style/dialog.css?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098" /></head>
 <body>
 
 <script type="text/javascript">
@@ -177,7 +177,7 @@
 	})();
 </script>
 
-<script type="text/javascript" src="//t1.daumcdn.net/tistory_admin/blogs/script/blog/common.js?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/tistory_admin/blogs/script/blog/common.js?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098"></script>
 <div style="margin:0; padding:0; border:none; background:none; float:none; clear:none; z-index:0"></div>
 	<div id="container">
 		<div id="header">
@@ -292,15 +292,15 @@ conn.close()
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></div><div style="width:100%;margin-top:30px;clear:both;height:30px">		<div class="entry-ccl" style="float:right;margin-top:0;height:0">
 			<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.ko" target="_blank" style="text-decoration: none">
-				<img id="ccl-icon-112-0" class="entry-ccl-by" src="//t1.daumcdn.net/tistory_admin/static/admin/editor/ccl_black01.png?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"
+				<img id="ccl-icon-112-0" class="entry-ccl-by" src="//t1.daumcdn.net/tistory_admin/static/admin/editor/ccl_black01.png?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098"
 				     onmouseover="tistoryCcl.show(this, 5)"
 				     onmouseout="tistoryCcl.hide()" alt="저작자 표시" style="width:15px;height:15px"/>
 									<img id="ccl-icon-112-1" class="entry-ccl-nc"
-					     src="//t1.daumcdn.net/tistory_admin/static/admin/editor/ccl_black02.png?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"
+					     src="//t1.daumcdn.net/tistory_admin/static/admin/editor/ccl_black02.png?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098"
 					     onmouseover="tistoryCcl.show(this, 5)"
 					     onmouseout="tistoryCcl.hide()" alt="비영리" style="width:15px;height:15px"/>
 												<img id="ccl-icon-112-2" class="entry-ccl-sa"
-							     src="//t1.daumcdn.net/tistory_admin/static/admin/editor/ccl_black04.png?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"
+							     src="//t1.daumcdn.net/tistory_admin/static/admin/editor/ccl_black04.png?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098"
 							     onmouseover="tistoryCcl.show(this, 5)"
 							     onmouseout="tistoryCcl.hide()" alt="동일 조건 변경 허락"
 							     style="width:15px;height:15px"/>
@@ -325,7 +325,7 @@ conn.close()
 					for (var i = 0; i <3; i++) {
 						var el = document.getElementById('ccl-icon-112-' + i);
 						el.style.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="' + el.src + '",sizingMethod="image")';
-						el.src = '//t1.daumcdn.net/tistory_admin/static/admin/form/s.gif?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03';
+						el.src = '//t1.daumcdn.net/tistory_admin/static/admin/form/s.gif?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098';
 					}
 				}
 			</script>
@@ -409,31 +409,31 @@ conn.close()
 					<a  href='/113' class="" id="prevPage">이전</a>
 					<span class="numbox">
 						
-						<a  href='/137' class="num"> <span>1</span></a>
+						<a  href='/139' class="num"> <span>1</span></a>
 						
 						<a  class="num"> <span>&middot;&middot;&middot;</span></a>
 						
-						<a  href='/116' class="num"> <span>20</span></a>
+						<a  href='/116' class="num"> <span>22</span></a>
 						
-						<a  href='/90' class="num"> <span>21</span></a>
+						<a  href='/90' class="num"> <span>23</span></a>
 						
-						<a  href='/115' class="num"> <span>22</span></a>
+						<a  href='/115' class="num"> <span>24</span></a>
 						
-						<a  href='/113' class="num"> <span>23</span></a>
+						<a  href='/113' class="num"> <span>25</span></a>
 						
-						<a  class="num"> <span class="selected" >24</span></a>
+						<a  class="num"> <span class="selected" >26</span></a>
 						
-						<a  href='/110' class="num"> <span>25</span></a>
+						<a  href='/110' class="num"> <span>27</span></a>
 						
-						<a  href='/107' class="num"> <span>26</span></a>
+						<a  href='/107' class="num"> <span>28</span></a>
 						
-						<a  href='/94' class="num"> <span>27</span></a>
+						<a  href='/94' class="num"> <span>29</span></a>
 						
-						<a  href='/105' class="num"> <span>28</span></a>
+						<a  href='/105' class="num"> <span>30</span></a>
 						
 						<a  class="num"> <span>&middot;&middot;&middot;</span></a>
 						
-						<a  href='/2' class="num"> <span>103</span></a>
+						<a  href='/2' class="num"> <span>105</span></a>
 						
 					</span>
 					<a  href='/110' class="" id="nextPage">다음</a>
@@ -567,7 +567,7 @@ conn.close()
 			<td valign="top" style="font-size:9pt; padding-left:3px">
 				<table id="imp0" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
 										<td class="branch3" onclick="window.location.href='/category'">
-						<div id="text_0" style=" color: #000000;">분류 전체보기						<span class="c_cnt">(103)</span>						</div>
+						<div id="text_0" style=" color: #000000;">분류 전체보기						<span class="c_cnt">(105)</span>						</div>
 					</td>
 				</tr></table>
 			</td>
@@ -577,7 +577,7 @@ conn.close()
 					<td class="ib" style="width:39px; font-size: 1px; background-image: url('//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_noactive.gif"><a class="click" onclick="toggleFolder('517181')"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_closed.gif" width="39" alt=""/></a></td>
 					<td>
 						<table cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
-								<td class="branch3" onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4'"><div id="text_517181" style="color: #000000;">1. 실험실 <span class="c_cnt">(97)</span></div></td>
+								<td class="branch3" onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4'"><div id="text_517181" style="color: #000000;">1. 실험실 <span class="c_cnt">(99)</span></div></td>
 							</tr></table>
 					</td>
 				</tr></table>
@@ -594,7 +594,7 @@ conn.close()
 							<td style="width:39px; font-size: 1px"><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/navi_back_active.gif" width="17" height="18" alt=""/><img src="//t1.daumcdn.net/tistory_admin/blogs/image/tree/base/tab_treed.gif" width="22" alt=""/></td>
 							<td>
 								<table onclick="window.location.href='/category/1.%20%EC%8B%A4%ED%97%98%EC%8B%A4/Emacs'" cellpadding="0" cellspacing="0" style="background-color: #ffffff;"><tr>
-										<td class="branch3"><div id="text_616583" style="color: #000000;">Emacs <span class="c_cnt">(13)</span></div></td>
+										<td class="branch3"><div id="text_616583" style="color: #000000;">Emacs <span class="c_cnt">(15)</span> <img src=//t1.daumcdn.net/tistory_admin/blogs/image/category/new_ico_5.gif?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098 alt="N" style='vertical-align:middle;padding-left:2px;' /></div></td>
 									</tr></table>
 							</td>
 						</tr></table>
@@ -682,57 +682,57 @@ conn.close()
 						<h3>태그목록</h3>
 						<ul>
 							
-								<li><a href="/tag/Perl" class="cloud5"> Perl</a></li>
-							
-								<li><a href="/tag/%ED%8C%8C%EC%9D%B4%EC%8D%AC" class="cloud4"> 파이썬</a></li>
-							
-								<li><a href="/tag/Clojure" class="cloud3"> Clojure</a></li>
-							
-								<li><a href="/tag/react" class="cloud4"> react</a></li>
-							
-								<li><a href="/tag/EmacsW32" class="cloud5"> EmacsW32</a></li>
-							
-								<li><a href="/tag/%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8" class="cloud4"> 텔레그램</a></li>
-							
 								<li><a href="/tag/Lazarus" class="cloud5"> Lazarus</a></li>
-							
-								<li><a href="/tag/Python" class="cloud1"> Python</a></li>
-							
-								<li><a href="/tag/pygame" class="cloud4"> pygame</a></li>
-							
-								<li><a href="/tag/%EC%9C%88%EB%8F%84%EC%9A%B0" class="cloud5"> 윈도우</a></li>
-							
-								<li><a href="/tag/PhoneGap" class="cloud4"> PhoneGap</a></li>
 							
 								<li><a href="/tag/TortoiseGit" class="cloud5"> TortoiseGit</a></li>
 							
+								<li><a href="/tag/Perl" class="cloud5"> Perl</a></li>
+							
+								<li><a href="/tag/emacs" class="cloud2"> emacs</a></li>
+							
+								<li><a href="/tag/EmacsW32" class="cloud5"> EmacsW32</a></li>
+							
 								<li><a href="/tag/Markdown" class="cloud4"> Markdown</a></li>
-							
-								<li><a href="/tag/wxPython" class="cloud4"> wxPython</a></li>
-							
-								<li><a href="/tag/emacs" class="cloud3"> emacs</a></li>
-							
-								<li><a href="/tag/%EC%9B%94%ED%8E%98%EC%9D%B4%ED%8D%BC" class="cloud5"> 월페이퍼</a></li>
-							
-								<li><a href="/tag/TortoiseSVN" class="cloud5"> TortoiseSVN</a></li>
 							
 								<li><a href="/tag/Lisp" class="cloud2"> Lisp</a></li>
 							
+								<li><a href="/tag/wxPython" class="cloud4"> wxPython</a></li>
+							
+								<li><a href="/tag/pascal" class="cloud5"> pascal</a></li>
+							
+								<li><a href="/tag/vaadin" class="cloud4"> vaadin</a></li>
+							
+								<li><a href="/tag/react" class="cloud4"> react</a></li>
+							
+								<li><a href="/tag/pyBox2D" class="cloud4"> pyBox2D</a></li>
+							
+								<li><a href="/tag/Python" class="cloud1"> Python</a></li>
+							
 								<li><a href="/tag/Sencha%20Touch" class="cloud3"> Sencha Touch</a></li>
 							
-								<li><a href="/tag/sbcl" class="cloud4"> sbcl</a></li>
+								<li><a href="/tag/pygame" class="cloud4"> pygame</a></li>
+							
+								<li><a href="/tag/TortoiseSVN" class="cloud5"> TortoiseSVN</a></li>
+							
+								<li><a href="/tag/%ED%8C%8C%EC%9D%B4%EC%8D%AC" class="cloud4"> 파이썬</a></li>
 							
 								<li><a href="/tag/cocos2d" class="cloud4"> cocos2d</a></li>
 							
 								<li><a href="/tag/%EC%83%9D%ED%99%9C%EC%A0%95%EB%B3%B4" class="cloud4"> 생활정보</a></li>
 							
-								<li><a href="/tag/vaadin" class="cloud4"> vaadin</a></li>
-							
-								<li><a href="/tag/pyBox2D" class="cloud4"> pyBox2D</a></li>
-							
-								<li><a href="/tag/pascal" class="cloud5"> pascal</a></li>
-							
 								<li><a href="/tag/node.js" class="cloud3"> node.js</a></li>
+							
+								<li><a href="/tag/%EC%9C%88%EB%8F%84%EC%9A%B0" class="cloud5"> 윈도우</a></li>
+							
+								<li><a href="/tag/%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8" class="cloud4"> 텔레그램</a></li>
+							
+								<li><a href="/tag/PhoneGap" class="cloud4"> PhoneGap</a></li>
+							
+								<li><a href="/tag/Clojure" class="cloud3"> Clojure</a></li>
+							
+								<li><a href="/tag/%EC%9B%94%ED%8E%98%EC%9D%B4%ED%8D%BC" class="cloud5"> 월페이퍼</a></li>
+							
+								<li><a href="/tag/sbcl" class="cloud4"> sbcl</a></li>
 							
 						</ul>
 					</div>
@@ -742,6 +742,18 @@ conn.close()
 						<h3>최근에 올라온 글 </h3>
 						<ul>
 							
+								<li>
+									<a href="/139"> [Emacs] 버퍼 조작 관련 유...</a>
+									<span class="cnt"><span id="commentCountOnRecentEntries139"></span></span>
+								</li>
+							
+
+								<li>
+									<a href="/138"> [Emacs] Emacs Lisp를 활용...</a>
+									<span class="cnt"><span id="commentCountOnRecentEntries138"></span></span>
+								</li>
+							
+
 								<li>
 									<a href="/137"> [React Native] react-nati...</a>
 									<span class="cnt"><span id="commentCountOnRecentEntries137"></span></span>
@@ -759,18 +771,6 @@ conn.close()
 									<span class="cnt"><span id="commentCountOnRecentEntries135"></span></span>
 								</li>
 							
-
-								<li>
-									<a href="/134"> [겉핥기 프로젝트] 자바스...</a>
-									<span class="cnt"><span id="commentCountOnRecentEntries134"></span></span>
-								</li>
-							
-
-								<li>
-									<a href="/133"> 라즈베리파이 제로 USB 포...</a>
-									<span class="cnt"><span id="commentCountOnRecentEntries133"></span></span>
-								</li>
-							
 						</ul>
 					</div>
 				
@@ -779,6 +779,12 @@ conn.close()
 						<h3>글 보관함</h3>
 						<ul>
 							
+								<li>
+									<a href="/archive/201709">2017/09 </a>
+									<span class="cnt">(2)</span>
+								</li>
+							
+
 								<li>
 									<a href="/archive/201708">2017/08 </a>
 									<span class="cnt">(3)</span>
@@ -800,12 +806,6 @@ conn.close()
 								<li>
 									<a href="/archive/201705">2017/05 </a>
 									<span class="cnt">(2)</span>
-								</li>
-							
-
-								<li>
-									<a href="/archive/201703">2017/03 </a>
-									<span class="cnt">(1)</span>
 								</li>
 							
 						</ul>
@@ -844,19 +844,19 @@ conn.close()
 			<td class=" cal_day cal_day3">1</td>
 			<td class=" cal_day cal_day3">2</td>
 		</tr>
-		<tr class="cal_week cal_current_week">
+		<tr class="cal_week">
 			<td class=" cal_day cal_day_sunday cal_day3">3</td>
 			<td class=" cal_day cal_day3">4</td>
 			<td class=" cal_day cal_day3">5</td>
 			<td class=" cal_day cal_day3">6</td>
 			<td class=" cal_day cal_day3">7</td>
-			<td class=" cal_day cal_day4">8</td>
+			<td class=" cal_day cal_day3">8</td>
 			<td class=" cal_day cal_day3">9</td>
 		</tr>
-		<tr class="cal_week">
+		<tr class="cal_week cal_current_week">
 			<td class=" cal_day cal_day_sunday cal_day3">10</td>
-			<td class=" cal_day cal_day3">11</td>
-			<td class=" cal_day cal_day3">12</td>
+			<td class=" cal_day cal_day3"><a class="cal_click" href="/archive/20170911">11</a></td>
+			<td class=" cal_day cal_day4">12</td>
 			<td class=" cal_day cal_day3">13</td>
 			<td class=" cal_day cal_day3">14</td>
 			<td class=" cal_day cal_day3">15</td>
@@ -888,9 +888,9 @@ conn.close()
 				<!-- 카운터 모듈 -->
 					<div id="counter">
 						<ul>
-							<li class="total">Total : 25,509 </li>
-							<li class="today">Today : 43</li>
-							<li class="yesterday">Yesterday : 67</li>
+							<li class="total">Total : 25,724 </li>
+							<li class="today">Today : 51</li>
+							<li class="yesterday">Yesterday : 80</li>
 						</ul>
 					</div>
 				
@@ -976,7 +976,7 @@ conn.close()
 		window.setTimeout(function () { body_element.removeChild(newdiv); }, 200);
 	});
 })(tjQuery);
-</script><script src="//t1.daumcdn.net/tistory_admin/blogs/plugins/lightbox/assets/js/lightbox.min.js?_version_=4cdf7ac06113ea1b66198857a47903abedc30a03"></script>
+</script><script src="//t1.daumcdn.net/tistory_admin/blogs/plugins/lightbox/assets/js/lightbox.min.js?_version_=adfc6c7f9611b81b05c30dddba8023fdd3e18098"></script>
 	<script>
 	    lightbox.option({
 			"fadeDuration": 200,

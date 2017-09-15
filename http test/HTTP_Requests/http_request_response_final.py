@@ -23,7 +23,7 @@ import string, random
 
 max = 10
 alphabet = string.letters[0:26] + string.digits  #abcdefghijklmnopqrstuvwxyz0123456789
-f = open('result.txt', 'wr')
+f = open("result.txt", "w") # wr 로 하면 에러가 뜬다.
 for count in xrange (0,max):
     string = ''
     for x in random.sample(alphabet, random.randint(8,8)):
